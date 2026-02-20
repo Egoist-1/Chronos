@@ -1,7 +1,6 @@
 package Chronos
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
@@ -18,8 +17,7 @@ func TestChronos(t *testing.T) {
 		go func(i int) {
 			chronos := New(rdb)
 			chronos.AddDistributedTask("@every 2s", func() {
-				print(i)
-				fmt.Sprintf("我是%d", i)
+				println(i)
 			}, Option{
 				TaskName: "测试",
 				ExecTime: time.Second * 2,

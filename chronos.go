@@ -2,7 +2,6 @@ package Chronos
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"sync"
 	"time"
@@ -71,8 +70,6 @@ func (t *Task) newTask(job func()) func() {
 				t.lock = nil
 			}()
 		}
-		fmt.Println("到这了")
-		fmt.Println("___")
 		job()
 	}
 }
